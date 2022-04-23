@@ -84,7 +84,7 @@ def metrics(confusion: np.ndarray, mask: np.ndarray) -> tuple:
 
     """
     # set the mask to all 1 if there are none specified
-    mask = np.ones(y_pred.shape[-1]) if mask is None else mask
+    mask = np.ones(confusion.shape[0]) if mask is None else mask
     # calculate the global accuracy from the confusion matrix
     _accuracy = accuracy(confusion, mask)
     # calculate the class accuracies from the confusion matrix
